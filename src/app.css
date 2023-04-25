@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background: #CCC;
+}
+
+.sep {
+    font-size: 5.5rem !important;
+    line-height: 3rem !important;
+    font-size: inherit;
+    animation: separator 1s infinite;
+}
+
+@keyframes separator {
+    0%, 52%, 100% {
+        opacity: 0%;
+    }
+    1%, 51% {
+        opacity: 100%;
+    }
+
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    background: #EEE;
+    padding: 4rem 2rem;
+    padding-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 10px 10px 24px #333;
+}
+
+.time {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.today {
+    margin-right: 2rem;
+}
+
+.today h1 {
+    font-size: 5.5rem;
+    line-height: 3rem;
+}
+
+.today h1 span {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.today h2 {
+    font-weight: 400;
+    text-align: start;
+    font-size: 2rem;
+}
+
+.timeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.timeDisplay {
+    display: grid;
+    grid-template-columns: 8rem 7rem;
+}
+
+.timeContainer h4, .timeContainer p {
+    flex: 1;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+.timeContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+.buttonContainer {
+    margin-top: 1.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.buttonContainer button {
+    padding: 0.4rem 1.2rem;
+    margin: 0 0.3rem;
+    background: transparent;
+    font-weight: 700;
+    border: 1px solid #777;
+    position: relative;
+    cursor: pointer;
+}
+
+.buttonContainer button span {
+    position: relative;
+    z-index: 3;
+}
+
+.buttonContainer button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #CCC;
+    z-index: 2;
+    transition: width 200ms ease;
+}
+
+.buttonContainer button:hover::before {
+    width: 100%;
+}
