@@ -1,0 +1,401 @@
+*, html {
+    paddding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body, #root {
+    height: 100%;
+    width: 100%;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 100%;
+}
+
+.main-header {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* opacity: 0.3; */
+    color: #EEE;
+    text-shadow: 0 0 10px #FFF;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.main-header h1 {
+    font-size: 4rem;
+}
+
+.main-header p {
+    font-size: 2rem;
+}
+
+.page-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.page-container-expand {
+    flex: 4;
+}
+
+.page-container:hover > .page-title {
+    scale: 1.1;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-content-overlay {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #33333399;
+    backdrop-filter: blur(20px);
+    transition: all 0.2s ease;
+}
+
+.page-content {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+.page-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.page-title {
+    z-index: 20;
+    transition: all 0.2s ease;
+    color: #EEE;
+    text-align: center;
+}
+
+.page-container[data-index="1"] {
+    background-color: #245459;
+}
+
+.page-container[data-index="2"] {
+    background-color: #8777E1;
+}
+
+.page-container[data-index="3"] {
+    background-color: #DDC29F;
+}
+
+.page-container[data-index="4"] {
+    background-color: #DDE0FB;
+}
+
+
+.page-container[data-index="1"] > .page-title {
+    text-shadow: 0 0 0.75em #51959c;
+}
+
+.page-container[data-index="2"] > .page-title {
+    text-shadow: 0 0 0.75em #bbafff;
+}
+
+.page-container[data-index="3"] > .page-title {
+    text-shadow: 0 0 0.75em #fde7c9;
+}
+
+.page-container[data-index="4"] > .page-title {
+    text-shadow: 0 0 0.75em #f6f7ff;
+}
+
+/* Personal Info */
+
+.personal-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #EEE;
+}
+
+.personal-info-container > *, .info > * {
+    margin: 1em 0em;
+}
+
+.name {
+    margin: 1em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.avatar {
+    min-height: 10em;
+    min-width: 10em;
+    height: 10em;
+    width: 10em;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.avatar > img {
+    position: relative;
+    display: block;
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.icon {
+    display: block;
+    height: 1em;
+    filter: invert(1);
+    margin-right: 8px;
+}
+
+.d-row {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.d-row > h3 > a {
+    color: #EEE;
+}
+
+.socials {
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.social-icon {
+    filter: invert(1);
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 1rem;
+}
+
+/* Educational Background */
+
+.educational-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.education-segment {
+    width: 80%;
+}
+
+.educational-background:first-child {
+    margin-bottom: 2em;
+}
+
+.education-segment > h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+.e-level-icon {
+    height: 5em;
+    width: 5em;
+    min-height: 5em;
+    min-width: 5em;
+}
+
+.educational-level {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+    
+.e-level-icon > img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.e-level-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-left: 0.5em;
+}
+
+.e-level-text a {
+    color: black;
+}
+
+.certification {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.certifications {
+    margin-top: 1.5em;
+}
+
+/* Projects */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.projects > h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.project-container:hover {
+    text-decoration: underline;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column; 
+    justify-content: start;
+    flex: 3;
+    overflow: hidden;
+    margin-left: 1.5rem;
+}
+
+.project-image-wrapper {
+    width: 30%
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    flex: 1;
+}
+
+.project-image-wrapper > img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    object-fit: contain;
+}
+
+/* BioNote */
+
+.bionote {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.bionote-info {
+    margin-bottom: 1.5em;
+}
+
+.bionote-content {
+    transform: matrix3d();
+}
+
+.bionote > h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    * {
+        font-size: 12px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .page-container-expand {
+        flex: 15;
+    }
+
+    .page-title {
+        rotate: 0deg !important;
+    }
+
+    .personal-info-container {
+        overflow: hidden;
+    }
+
+    .personal-info-container > *, .info > * {
+        margin: 0.5em 0em;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .page-container-expand {
+        flex: 10;
+    }
+
+    .page-title {
+        rotate: -90deg;
+    }
+}
